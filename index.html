@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari Gadget - Mobile Phones & Accessories</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-mobile-alt logo-icon"></i>
+                    <h1>Safari Gadget</h1>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="nav-home">Home</a></li>
+                        <li><a href="#products" class="nav-products">Products</a></li>
+                        <li><a href="about.html" class="nav-about">About</a></li>
+                        <li><a href="#contact" class="nav-contact">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-icons">
+                    <div><i class="fas fa-search"></i></div>
+                    <div><i class="fas fa-user"></i></div>
+                    <div id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Discover the Best Mobile Gadgets</h2>
+            <p>Explore our wide range of smartphones and accessories for every need and budget. Quality products with fast delivery.</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Browse Categories</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Smartphones</h3>
+                        <p>Latest models from top brands</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Audio</h3>
+                        <p>Headphones & earphones</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Charging</h3>
+                        <p>Chargers & power banks</p>
+                    </div>
+                </div>
+                
+                <div class="category-card">
+                    <div class="category-img">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="category-content">
+                        <h3>Protection</h3>
+                        <p>Cases & screen protectors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid" id="product-grid">
+                <!-- Products will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-checkout">&times;</span>
+            <h2>Checkout</h2>
+            
+            <div class="form-group">
+                <label for="customer-name">Full Name</label>
+                <input type="text" id="customer-name" class="form-control" placeholder="Enter your full name">
+            </div>
+            
+            <div class="form-group">
+                <label for="customer-phone">Phone Number</label>
+                <input type="tel" id="customer-phone" class="form-control" placeholder="Enter your phone number">
+            </div>
+            
+            <div class="form-group">
+                <label for="customer-email">Email Address</label>
+                <input type="email" id="customer-email" class="form-control" placeholder="Enter your email">
+            </div>
+            
+            <h3>Select Payment Method</h3>
+            <div class="payment-methods">
+                <div class="payment-method" data-method="mpesa">
+                    <i class="fas fa-mobile-alt"></i>
+                    <p>M-Pesa</p>
+                </div>
+                <div class="payment-method" data-method="tigo-pesa">
+                    <i class="fas fa-mobile-alt"></i>
+                    <p>Tigo Pesa</p>
+                </div>
+                <div class="payment-method" data-method="airtel-money">
+                    <i class="fas fa-mobile-alt"></i>
+                    <p>Airtel Money</p>
+                </div>
+                <div class="payment-method" data-method="halotel-pesa">
+                    <i class="fas fa-mobile-alt"></i>
+                    <p>Halotel Pesa</p>
+                </div>
+                <div class="payment-method" data-method="visa">
+                    <i class="fas fa-credit-card"></i>
+                    <p>Visa</p>
+                </div>
+                <div class="payment-method" data-method="mastercard">
+                    <i class="fas fa-credit-card"></i>
+                    <p>Mastercard</p>
+                </div>
+            </div>
+            
+            <div class="form-group" id="payment-details">
+                <!-- Payment details will be shown based on selection -->
+            </div>
+            
+            <button class="btn btn-primary" id="complete-payment">Complete Payment</button>
+        </div>
+    </div>
+
+    <!-- Ticket Modal -->
+    <div class="modal" id="ticket-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-ticket">&times;</span>
+            
+            <div class="ticket">
+                <div class="ticket-header">
+                    <h2>Safari Gadget</h2>
+                    <p>Purchase Confirmation</p>
+                    <div class="ticket-number" id="ticket-number">SG250831001</div>
+                </div>
+                
+                <div class="ticket-details">
+                    <div class="ticket-item">
+                        <span>Customer:</span>
+                        <span id="ticket-customer">John Doe</span>
+                    </div>
+                    <div class="ticket-item">
+                        <span>Date:</span>
+                        <span id="ticket-date">August 31, 2025</span>
+                    </div>
+                    <div class="ticket-item">
+                        <span>Payment Method:</span>
+                        <span id="ticket-payment">M-Pesa</span>
+                    </div>
+                    
+                    <h4>Order Items:</h4>
+                    <div id="ticket-items">
+                        <!-- Items will be added dynamically -->
+                    </div>
+                    
+                    <div class="ticket-item">
+                        <strong>Total:</strong>
+                        <strong id="ticket-total">TSh 2,069,977</strong>
+                    </div>
+                </div>
+                
+                <div id="qrcode"></div>
+                <p>Thank you for your purchase!</p>
+                <button class="btn" id="print-ticket">Print Ticket</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Safari Gadget</h3>
+                    <p>Your one-stop shop for all mobile gadgets and accessories. Quality products at affordable prices.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Gadget Street, Tech City</li>
+                        <li><i class="fas fa-phone"></i> +255 123 456 789</li>
+                        <li><i class="fas fa-envelope"></i> info@safarigadget.com</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for updates on new products and special offers.</p>
+                    <form>
+                        <input type="email" placeholder="Your Email" class="form-control">
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Safari Gadget. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
